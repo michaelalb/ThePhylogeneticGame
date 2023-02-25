@@ -323,6 +323,7 @@ def calc_likelihood(tree, msa_file, rates, pinv, alpha, freq):
 
     return float(ll), opt_tree  # changed to return a num not a str
 
+
 def msa_to_species_lst(data_set_number):
     '''
     :param data_set_number:
@@ -333,6 +334,7 @@ def msa_to_species_lst(data_set_number):
     sp_lst = [seq.id for seq in msa]
     sp_lst.sort()
     return sp_lst
+
 
 def get_newick_tree(tree_str):
     """

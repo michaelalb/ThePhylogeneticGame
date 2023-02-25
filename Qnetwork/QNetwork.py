@@ -2,11 +2,11 @@ import os
 
 import joblib
 import torch
-import SharedConsts as SC
 import torch.optim as optim
 
-from Qnetwork.ReplayBuffer import ReplayBuffer
+import SharedConsts as SC
 from Qnetwork.Qnet_architecture import Net
+from Qnetwork.ReplayBuffer import ReplayBuffer
 from SharedConsts import GAMMA, LOSS_FUNC, SOFT_UPDATE_RATE, UPDATE_TARGET_NET, \
     TARGET_NET_UPDATE_POLICY, USE_TARGET, LEARNING_RATE, BUFFER_SIZE, BATCH_SIZE
 

@@ -3,12 +3,13 @@ this file is meant for constants shared across all modules
 note: only one place for the data, gitcode, results, and any input/output (Michael's homedir/RL).
 the temp PyCharm synced code could be in all our users for debugging
 """
+import json
 import os
 import platform
 from pathlib import Path
-import json
-import torch
+
 import Agents.Qnetwork.ExploreScheduler as ExploreScheduler
+import torch
 
 ##########################
 #EXPERIMENT CONFIGURATION#
@@ -180,3 +181,10 @@ Q_NETWORK_TARGET_WEIGHTS_FILE_NAME = Path('Qnetwork_target_weights.pkl')
 REPLAY_BUFFER_FILE_NAME = Path('Replay_Buffer_memory.pkl')
 PROCESSED_DATA_FILE_NAME = Path('Processed_Data.pkl')
 TESTING_RESULT_COLUMNS = ["test_replication_number", "data_set_number", "ll_diff", "rf_dist", "ll_norm_factor", "rf_norm_factor", "raxml_ml", "max_ll_reached"]
+
+
+##########################
+## LEARN FROM EXPERIENCE #
+##########################
+
+EPOCHS = 501

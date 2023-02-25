@@ -1,7 +1,6 @@
 import argparse
-import DqnAgentExperimentRunner as DqnAgentRunner
-from Agents.dqn_agent_plotting_helper import create_variance_plot_per_dataset
 
+import DqnAgentExperimentRunner as DqnAgentRunner
 
 if __name__ == '__main__':
 

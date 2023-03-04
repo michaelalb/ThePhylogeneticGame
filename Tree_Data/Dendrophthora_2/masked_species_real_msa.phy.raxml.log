@@ -1,0 +1,89 @@
+
+RAxML-NG v. 1.1 released on 29.11.2021 by The Exelixis Lab.
+Developed by: Alexey M. Kozlov and Alexandros Stamatakis.
+Contributors: Diego Darriba, Tomas Flouri, Benoit Morel, Sarah Lutteropp, Ben Bettisworth.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+System: Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz, 20 cores, 62 GB RAM
+
+RAxML-NG was called at 28-Feb-2023 11:09:42 as follows:
+
+raxml-ng --msa /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/Dendrophthora_2/masked_species_real_msa.phy --threads 1 --model GTR{0.58764/6.05154/0.00097/0.00097/15.97951/1.00000}+I{0.174}+G{0.117}+F{0.20965/0.25886/0.32895/0.20255} --tree /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/Dendrophthora_2/Temp_start_tree_file_for_raxml_search.txt --redo
+
+Analysis options:
+  run mode: ML tree search
+  start tree(s): user
+  random seed: 1677575382
+  tip-inner: OFF
+  pattern compression: ON
+  per-rate scalers: OFF
+  site repeats: ON
+  fast spr radius: AUTO
+  spr subtree cutoff: 1.000000
+  branch lengths: proportional (ML estimate, algorithm: NR-FAST)
+  SIMD kernels: AVX
+  parallelization: coarse-grained (auto), NONE/sequential
+
+WARNING: Running in REDO mode: existing checkpoints are ignored, and all result files will be overwritten!
+
+[00:00:00] Reading alignment from file: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/Dendrophthora_2/masked_species_real_msa.phy
+[00:00:00] Loaded alignment with 7 taxa and 402 sites
+
+Alignment comprises 1 partitions and 30 patterns
+
+Partition 0: noname
+Model: GTR{0.58764/6.05154/0.00097/0.00097/15.9795/1}+FU{0.20965/0.25886/0.32895/0.20255}+IU{0.174}+G4m{0.117}
+Alignment sites / patterns: 402 / 30
+Gaps: 0.28 %
+Invariant sites: 92.29 %
+
+
+NOTE: Binary MSA file created: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/Dendrophthora_2/masked_species_real_msa.phy.raxml.rba
+
+Parallelization scheme autoconfig: 1 worker(s) x 1 thread(s)
+
+Parallel reduction/worker buffer size: 1 KB  / 0 KB
+
+[00:00:00] Loading user starting tree(s) from: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/Dendrophthora_2/Temp_start_tree_file_for_raxml_search.txt
+[00:00:00] Data distribution: max. partitions/sites/weight per thread: 1 / 30 / 480
+[00:00:00] Data distribution: max. searches per worker: 1
+
+Starting ML tree search with 1 distinct starting trees
+
+[00:00:00 -835.934765] Initial branch length optimization
+[00:00:00 -775.466844] Model parameter optimization (eps = 10.000000)
+[00:00:00 -775.460431] AUTODETECT spr round 1 (radius: 5)
+[00:00:00 -741.144529] SPR radius for FAST iterations: 5 (autodetect)
+[00:00:00 -741.144529] Model parameter optimization (eps = 3.000000)
+[00:00:00 -741.143370] FAST spr round 1 (radius: 5)
+[00:00:00 -741.143344] Model parameter optimization (eps = 1.000000)
+[00:00:00 -741.143344] SLOW spr round 1 (radius: 5)
+[00:00:00 -741.143344] Model parameter optimization (eps = 0.100000)
+
+[00:00:00] ML tree search #1, logLikelihood: -741.143344
+
+
+Optimized model parameters:
+
+   Partition 0: noname
+   Rate heterogeneity: GAMMA (4 cats, mean),  alpha: 0.117000 (user),  weights&rates: (0.250000,0.000004) (0.250000,0.002943) (0.250000,0.142006) (0.250000,3.855048) 
+   P-inv (user): 0.174000
+   Base frequencies (user): 0.209648 0.258857 0.328947 0.202548 
+   Substitution rates (user): 0.587640 6.051540 0.000970 0.000970 15.979510 1.000000 
+
+
+Final LogLikelihood: -741.143344
+
+AIC score: 1504.286688 / AICc score: 1504.963611 / BIC score: 1548.247661
+Free parameters (model + branch lengths): 11
+
+Best ML tree saved to: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/Dendrophthora_2/masked_species_real_msa.phy.raxml.bestTree
+Optimized model saved to: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/Dendrophthora_2/masked_species_real_msa.phy.raxml.bestModel
+
+Execution log saved to: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/Dendrophthora_2/masked_species_real_msa.phy.raxml.log
+
+Analysis started: 28-Feb-2023 11:09:42 / finished: 28-Feb-2023 11:09:42
+
+Elapsed time: 0.078 seconds
+

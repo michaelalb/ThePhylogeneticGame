@@ -1,0 +1,59 @@
+
+ oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+                                  ---  PhyML 20130103  ---                                             
+                            http://www.atgc-montpellier.fr/phyml                                          
+                         Copyright CNRS - Universite Montpellier II                                 
+ oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+
+. Sequence filename: 			masked_species_real_msa.phy
+. Data set: 				#1
+. Tree topology: 			fixed
+. Initial tree: 			BioNJ
+. Model of nucleotides substitution: 	Custom (012345)
+. Number of taxa: 			7
+. Log-likelihood: 			-4230.54749
+. Unconstrained likelihood: 		-5956.08906
+. Parsimony: 				584
+. Tree size: 				0.93541
+. Discrete gamma model: 		Yes
+  - Number of categories: 		4
+  - Gamma shape parameter: 		0.381
+. Proportion of invariant: 		0.142
+. Nucleotides frequencies:
+  - f(A)= 0.22032
+  - f(C)= 0.29488
+  - f(G)= 0.22528
+  - f(T)= 0.25952
+. GTR relative rate parameters : 
+  A <-> C    1.19548
+  A <-> G    1.70160
+  A <-> T    1.00318
+  C <-> G    0.76818
+  C <-> T    2.28175
+  G <-> T    1.00000
+
+. Instantaneous rate matrix : 
+  [A---------C---------G---------T------]
+  -0.98909   0.35001   0.38060   0.25849  
+   0.26151  -1.02126   0.17182   0.58793  
+   0.37222   0.22490  -0.85479   0.25767  
+   0.21945   0.66804   0.22367  -1.11116  
+
+
+
+. Run ID:				bionj
+. Random seed:				1597219379
+. Subtree patterns aliasing:		no
+. Version:				20130103
+. Time used:				0h0m1s (1 seconds)
+
+ oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+ Suggested citations:
+ S. Guindon, JF. Dufayard, V. Lefort, M. Anisimova, W. Hordijk, O. Gascuel
+ "New algorithms and methods to estimate maximum-likelihood phylogenies: assessing the performance of PhyML 3.0."
+ Systematic Biology. 2010. 59(3):307-321.
+
+ S. Guindon & O. Gascuel
+ "A simple, fast, and accurate algorithm to estimate large phylogenies by maximum likelihood"
+ Systematic Biology. 2003. 52(5):696-704.
+ oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo

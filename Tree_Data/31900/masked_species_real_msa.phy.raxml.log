@@ -1,0 +1,92 @@
+
+RAxML-NG v. 1.1 released on 29.11.2021 by The Exelixis Lab.
+Developed by: Alexey M. Kozlov and Alexandros Stamatakis.
+Contributors: Diego Darriba, Tomas Flouri, Benoit Morel, Sarah Lutteropp, Ben Bettisworth.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+System: AMD Opteron(tm) Processor 6128, 16 cores, 117 GB RAM
+
+RAxML-NG was called at 30-Nov-2022 16:46:11 as follows:
+
+raxml-ng --msa /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/31900/masked_species_real_msa.phy --threads 1 --opt-branches on --opt-model --nofiles --tree rand{1} --redo off --model GTR{1.64690/3.01979/0.89079/0.68156/5.65358/1.00000}+I{0.576}+G{1.047}+F{0.25924/0.20819/0.20885/0.32372}
+
+Analysis options:
+  run mode: ML tree search
+  start tree(s): random (1)
+  random seed: 1669819571
+  tip-inner: OFF
+  pattern compression: ON
+  per-rate scalers: OFF
+  site repeats: ON
+  fast spr radius: AUTO
+  spr subtree cutoff: 1.000000
+  branch lengths: proportional (ML estimate, algorithm: NR-FAST)
+  SIMD kernels: SSE3
+  parallelization: coarse-grained (auto), NONE/sequential
+
+WARNING: Running in REDO mode: existing checkpoints are ignored, and all result files will be overwritten!
+
+[00:00:00] Reading alignment from file: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/31900/masked_species_real_msa.phy
+[00:00:00] Loaded alignment with 12 taxa and 993 sites
+
+Alignment comprises 1 partitions and 86 patterns
+
+Partition 0: noname
+Model: GTR{1.6469/3.01979/0.89079/0.68156/5.65358/1}+FU{0.25924/0.20819/0.20885/0.32372}+IU{0.576}+G4m{1.047}
+Alignment sites / patterns: 993 / 86
+Gaps: 3.48 %
+Invariant sites: 90.74 %
+
+
+NOTE: Binary MSA file created: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/31900/masked_species_real_msa.phy.raxml.rba
+
+Parallelization scheme autoconfig: 1 worker(s) x 1 thread(s)
+
+Parallel reduction/worker buffer size: 1 KB  / 0 KB
+
+[00:00:00] Generating 1 random starting tree(s) with 12 taxa
+[00:00:00] Data distribution: max. partitions/sites/weight per thread: 1 / 86 / 1376
+[00:00:00] Data distribution: max. searches per worker: 1
+
+Starting ML tree search with 1 distinct starting trees
+
+[00:00:00 -2537.828797] Initial branch length optimization
+[00:00:00 -2193.390992] Model parameter optimization (eps = 10.000000)
+[00:00:00 -2193.146865] AUTODETECT spr round 1 (radius: 5)
+[00:00:00 -2012.946027] AUTODETECT spr round 2 (radius: 10)
+[00:00:00 -2012.945428] SPR radius for FAST iterations: 5 (autodetect)
+[00:00:00 -2012.945428] Model parameter optimization (eps = 3.000000)
+[00:00:00 -2012.945420] FAST spr round 1 (radius: 5)
+[00:00:00 -2009.568518] FAST spr round 2 (radius: 5)
+[00:00:00 -2009.568518] Model parameter optimization (eps = 1.000000)
+[00:00:00 -2009.568518] SLOW spr round 1 (radius: 5)
+[00:00:00 -2009.568518] SLOW spr round 2 (radius: 10)
+[00:00:00 -2009.568518] Model parameter optimization (eps = 0.100000)
+
+[00:00:00] ML tree search #1, logLikelihood: -2009.568518
+
+
+Optimized model parameters:
+
+   Partition 0: noname
+   Rate heterogeneity: GAMMA (4 cats, mean),  alpha: 1.047000 (user),  weights&rates: (0.250000,0.146235) (0.250000,0.490437) (0.250000,1.007371) (0.250000,2.355957) 
+   P-inv (user): 0.576000
+   Base frequencies (user): 0.259240 0.208190 0.208850 0.323720 
+   Substitution rates (user): 1.646900 3.019790 0.890790 0.681560 5.653580 1.000000 
+
+
+Final LogLikelihood: -2009.568518
+
+AIC score: 4061.137036 / AICc score: 4062.088632 / BIC score: 4164.052380
+Free parameters (model + branch lengths): 21
+
+Best ML tree saved to: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/31900/masked_species_real_msa.phy.raxml.bestTree
+Optimized model saved to: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/31900/masked_species_real_msa.phy.raxml.bestModel
+
+Execution log saved to: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/31900/masked_species_real_msa.phy.raxml.log
+
+Analysis started: 30-Nov-2022 16:46:11 / finished: 30-Nov-2022 16:46:12
+
+Elapsed time: 0.500 seconds
+

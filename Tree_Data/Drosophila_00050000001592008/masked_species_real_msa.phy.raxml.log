@@ -1,0 +1,93 @@
+
+RAxML-NG v. 1.1 released on 29.11.2021 by The Exelixis Lab.
+Developed by: Alexey M. Kozlov and Alexandros Stamatakis.
+Contributors: Diego Darriba, Tomas Flouri, Benoit Morel, Sarah Lutteropp, Ben Bettisworth.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+System: Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz, 20 cores, 62 GB RAM
+
+RAxML-NG was called at 28-Feb-2023 14:23:52 as follows:
+
+raxml-ng --msa /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/Drosophila_00050000001592008/masked_species_real_msa.phy --threads 1 --model GTR{0.68817/1.95304/1.00388/0.99854/3.24405/1.00000}+I{0.285}+G{1.589}+F{0.28058/0.30079/0.23458/0.18405} --tree /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/Drosophila_00050000001592008/Temp_start_tree_file_for_raxml_search.txt --redo
+
+Analysis options:
+  run mode: ML tree search
+  start tree(s): user
+  random seed: 1677587032
+  tip-inner: OFF
+  pattern compression: ON
+  per-rate scalers: OFF
+  site repeats: ON
+  fast spr radius: AUTO
+  spr subtree cutoff: 1.000000
+  branch lengths: proportional (ML estimate, algorithm: NR-FAST)
+  SIMD kernels: AVX
+  parallelization: coarse-grained (auto), NONE/sequential
+
+WARNING: Running in REDO mode: existing checkpoints are ignored, and all result files will be overwritten!
+
+[00:00:00] Reading alignment from file: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/Drosophila_00050000001592008/masked_species_real_msa.phy
+[00:00:00] Loaded alignment with 12 taxa and 4122 sites
+
+Alignment comprises 1 partitions and 1179 patterns
+
+Partition 0: noname
+Model: GTR{0.68817/1.95304/1.00388/0.99854/3.24405/1}+FU{0.28058/0.30079/0.23458/0.18405}+IU{0.285}+G4m{1.589}
+Alignment sites / patterns: 4122 / 1179
+Gaps: 41.21 %
+Invariant sites: 69.26 %
+
+
+NOTE: Binary MSA file created: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/Drosophila_00050000001592008/masked_species_real_msa.phy.raxml.rba
+
+Parallelization scheme autoconfig: 1 worker(s) x 1 thread(s)
+
+Parallel reduction/worker buffer size: 1 KB  / 0 KB
+
+[00:00:00] Loading user starting tree(s) from: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/Drosophila_00050000001592008/Temp_start_tree_file_for_raxml_search.txt
+[00:00:00] Data distribution: max. partitions/sites/weight per thread: 1 / 1179 / 18864
+[00:00:00] Data distribution: max. searches per worker: 1
+
+Starting ML tree search with 1 distinct starting trees
+
+[00:00:00 -19534.297958] Initial branch length optimization
+[00:00:00 -17619.563108] Model parameter optimization (eps = 10.000000)
+[00:00:00 -17618.888746] AUTODETECT spr round 1 (radius: 5)
+[00:00:00 -15581.059906] AUTODETECT spr round 2 (radius: 10)
+[00:00:00 -15581.049758] SPR radius for FAST iterations: 5 (autodetect)
+[00:00:00 -15581.049758] Model parameter optimization (eps = 3.000000)
+[00:00:00 -15581.049192] FAST spr round 1 (radius: 5)
+[00:00:00 -15486.078008] FAST spr round 2 (radius: 5)
+[00:00:00 -15471.735325] FAST spr round 3 (radius: 5)
+[00:00:01 -15471.735305] Model parameter optimization (eps = 1.000000)
+[00:00:01 -15471.735305] SLOW spr round 1 (radius: 5)
+[00:00:01 -15471.735305] SLOW spr round 2 (radius: 10)
+[00:00:02 -15471.735305] Model parameter optimization (eps = 0.100000)
+
+[00:00:02] ML tree search #1, logLikelihood: -15471.735305
+
+
+Optimized model parameters:
+
+   Partition 0: noname
+   Rate heterogeneity: GAMMA (4 cats, mean),  alpha: 1.589000 (user),  weights&rates: (0.250000,0.238749) (0.250000,0.602730) (0.250000,1.055247) (0.250000,2.103274) 
+   P-inv (user): 0.285000
+   Base frequencies (user): 0.280580 0.300790 0.234580 0.184050 
+   Substitution rates (user): 0.688170 1.953040 1.003880 0.998540 3.244050 1.000000 
+
+
+Final LogLikelihood: -15471.735305
+
+AIC score: 30985.470609 / AICc score: 30985.695975 / BIC score: 31118.276578
+Free parameters (model + branch lengths): 21
+
+Best ML tree saved to: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/Drosophila_00050000001592008/masked_species_real_msa.phy.raxml.bestTree
+Optimized model saved to: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/Drosophila_00050000001592008/masked_species_real_msa.phy.raxml.bestModel
+
+Execution log saved to: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/Drosophila_00050000001592008/masked_species_real_msa.phy.raxml.log
+
+Analysis started: 28-Feb-2023 14:23:52 / finished: 28-Feb-2023 14:23:54
+
+Elapsed time: 2.060 seconds
+

@@ -1,0 +1,102 @@
+
+RAxML-NG v. 1.1 released on 29.11.2021 by The Exelixis Lab.
+Developed by: Alexey M. Kozlov and Alexandros Stamatakis.
+Contributors: Diego Darriba, Tomas Flouri, Benoit Morel, Sarah Lutteropp, Ben Bettisworth.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+System: Intel(R) Xeon(R) CPU E5-2680 v3 @ 2.50GHz, 24 cores, 125 GB RAM
+
+RAxML-NG was called at 21-Dec-2022 19:39:06 as follows:
+
+raxml-ng --msa /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/688/masked_species_real_msa.phy --threads 1 --opt-branches on --opt-model --nofiles --tree rand{1} --redo off --model GTR{1.14531/1.58675/0.29672/0.86911/1.24911/1.00000}+I{0.264}+G{99.861}+F{0.35837/0.11636/0.13378/0.39148}
+
+Analysis options:
+  run mode: ML tree search
+  start tree(s): random (1)
+  random seed: 1671644346
+  tip-inner: OFF
+  pattern compression: ON
+  per-rate scalers: OFF
+  site repeats: ON
+  fast spr radius: AUTO
+  spr subtree cutoff: 1.000000
+  branch lengths: proportional (ML estimate, algorithm: NR-FAST)
+  SIMD kernels: AVX2
+  parallelization: coarse-grained (auto), NONE/sequential
+
+WARNING: Running in REDO mode: existing checkpoints are ignored, and all result files will be overwritten!
+
+[00:00:00] Reading alignment from file: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/688/masked_species_real_msa.phy
+[00:00:00] Loaded alignment with 15 taxa and 308 sites
+
+WARNING: Sequences Sp006 and Sp007 are exactly identical!
+WARNING: Duplicate sequences found: 1
+
+NOTE: Reduced alignment (with duplicates and gap-only sites/taxa removed) 
+NOTE: was saved to: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/688/masked_species_real_msa.phy.raxml.reduced.phy
+
+Alignment comprises 1 partitions and 94 patterns
+
+Partition 0: noname
+Model: GTR{1.14531/1.58675/0.29672/0.86911/1.24911/1}+FU{0.35837/0.11636/0.13378/0.39148}+IU{0.264}+G4m{99.861}
+Alignment sites / patterns: 308 / 94
+Gaps: 1.36 %
+Invariant sites: 68.51 %
+
+
+NOTE: Binary MSA file created: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/688/masked_species_real_msa.phy.raxml.rba
+
+Parallelization scheme autoconfig: 1 worker(s) x 1 thread(s)
+
+Parallel reduction/worker buffer size: 1 KB  / 0 KB
+
+[00:00:00] Generating 1 random starting tree(s) with 15 taxa
+[00:00:00] Data distribution: max. partitions/sites/weight per thread: 1 / 94 / 1504
+[00:00:00] Data distribution: max. searches per worker: 1
+
+Starting ML tree search with 1 distinct starting trees
+
+[00:00:00 -1937.631783] Initial branch length optimization
+[00:00:00 -1674.949280] Model parameter optimization (eps = 10.000000)
+[00:00:00 -1674.429390] AUTODETECT spr round 1 (radius: 5)
+[00:00:00 -1103.687755] AUTODETECT spr round 2 (radius: 10)
+[00:00:00 -1103.687484] SPR radius for FAST iterations: 5 (autodetect)
+[00:00:00 -1103.687484] Model parameter optimization (eps = 3.000000)
+[00:00:00 -1103.687480] FAST spr round 1 (radius: 5)
+[00:00:00 -1074.344893] FAST spr round 2 (radius: 5)
+[00:00:00 -1074.344893] Model parameter optimization (eps = 1.000000)
+[00:00:00 -1074.344893] SLOW spr round 1 (radius: 5)
+[00:00:00 -1074.344893] SLOW spr round 2 (radius: 10)
+[00:00:00 -1074.344893] SLOW spr round 3 (radius: 15)
+[00:00:00 -1074.344893] Model parameter optimization (eps = 0.100000)
+
+[00:00:00] ML tree search #1, logLikelihood: -1074.344893
+
+
+Optimized model parameters:
+
+   Partition 0: noname
+   Rate heterogeneity: GAMMA (4 cats, mean),  alpha: 99.861000 (user),  weights&rates: (0.250000,0.875822) (0.250000,0.964712) (0.250000,1.029568) (0.250000,1.129898) 
+   P-inv (user): 0.264000
+   Base frequencies (user): 0.358374 0.116361 0.133781 0.391484 
+   Substitution rates (user): 1.145310 1.586750 0.296720 0.869110 1.249110 1.000000 
+
+
+Final LogLikelihood: -1074.344893
+
+AIC score: 2202.689786 / AICc score: 2208.089786 / BIC score: 2303.402480
+Free parameters (model + branch lengths): 27
+
+WARNING: Best ML tree contains 4 near-zero branches!
+
+Best ML tree with collapsed near-zero branches saved to: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/688/masked_species_real_msa.phy.raxml.bestTreeCollapsed
+Best ML tree saved to: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/688/masked_species_real_msa.phy.raxml.bestTree
+Optimized model saved to: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/688/masked_species_real_msa.phy.raxml.bestModel
+
+Execution log saved to: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/688/masked_species_real_msa.phy.raxml.log
+
+Analysis started: 21-Dec-2022 19:39:06 / finished: 21-Dec-2022 19:39:06
+
+Elapsed time: 0.192 seconds
+

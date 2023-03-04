@@ -1,0 +1,61 @@
+
+RAxML-NG v. 1.1 released on 29.11.2021 by The Exelixis Lab.
+Developed by: Alexey M. Kozlov and Alexandros Stamatakis.
+Contributors: Diego Darriba, Tomas Flouri, Benoit Morel, Sarah Lutteropp, Ben Bettisworth.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+System: Intel(R) Xeon(R) Gold 6230 CPU @ 2.10GHz, 1 cores, 31 GB RAM
+
+RAxML-NG was called at 28-Dec-2022 15:01:34 as follows:
+
+raxml-ng --msa /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/39146/masked_species_real_msa.phy --threads 1 --opt-branches on --opt-model --nofiles --tree rand{1} --redo off --model GTR{2.39723/4.03174/2.93867/1.41355/3.46564/1.00000}+I{0.347}+G{1.517}+F{0.25184/0.19176/0.20799/0.34841}
+
+Analysis options:
+  run mode: ML tree search
+  start tree(s): random (1)
+  random seed: 1672232494
+  tip-inner: OFF
+  pattern compression: ON
+  per-rate scalers: OFF
+  site repeats: ON
+  fast spr radius: AUTO
+  spr subtree cutoff: 1.000000
+  branch lengths: proportional (ML estimate, algorithm: NR-FAST)
+  SIMD kernels: AVX2
+  parallelization: coarse-grained (auto), NONE/sequential
+
+WARNING: Running in REDO mode: existing checkpoints are ignored, and all result files will be overwritten!
+
+[00:00:00] Reading alignment from file: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/39146/masked_species_real_msa.phy
+[00:00:00] Loaded alignment with 20 taxa and 811 sites
+
+Alignment comprises 1 partitions and 450 patterns
+
+Partition 0: noname
+Model: GTR{2.39723/4.03174/2.93867/1.41355/3.46564/1}+FU{0.25184/0.19176/0.20799/0.34841}+IU{0.347}+G4m{1.517}
+Alignment sites / patterns: 811 / 450
+Gaps: 20.86 %
+Invariant sites: 55.24 %
+
+
+NOTE: Binary MSA file created: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/39146/masked_species_real_msa.phy.raxml.rba
+
+Parallelization scheme autoconfig: 1 worker(s) x 1 thread(s)
+
+Parallel reduction/worker buffer size: 1 KB  / 0 KB
+
+[00:00:00] Generating 1 random starting tree(s) with 20 taxa
+[00:00:00] Data distribution: max. partitions/sites/weight per thread: 1 / 450 / 7200
+[00:00:00] Data distribution: max. searches per worker: 1
+
+Starting ML tree search with 1 distinct starting trees
+
+[00:00:00 -5163.959085] Initial branch length optimization
+[00:00:00 -4204.639455] Model parameter optimization (eps = 10.000000)
+[00:00:00 -4203.658602] AUTODETECT spr round 1 (radius: 5)
+[00:00:00 -3803.726652] AUTODETECT spr round 2 (radius: 10)
+[00:00:00 -3767.553183] AUTODETECT spr round 3 (radius: 15)
+[00:00:00 -3767.552040] SPR radius for FAST iterations: 10 (autodetect)
+[00:00:00 -3767.552040] Model parameter optimization (eps = 3.000000)
+[00:00:00 -3767.551880] FAST spr round 1 (radius: 10)

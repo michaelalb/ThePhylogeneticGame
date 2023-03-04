@@ -1,0 +1,91 @@
+
+RAxML-NG v. 1.1 released on 29.11.2021 by The Exelixis Lab.
+Developed by: Alexey M. Kozlov and Alexandros Stamatakis.
+Contributors: Diego Darriba, Tomas Flouri, Benoit Morel, Sarah Lutteropp, Ben Bettisworth.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+System: AMD Opteron(tm) Processor 6128, 16 cores, 117 GB RAM
+
+RAxML-NG was called at 30-Nov-2022 15:19:44 as follows:
+
+raxml-ng --msa /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/Elephantopus_3/masked_species_real_msa.phy --threads 1 --opt-branches on --opt-model --nofiles --tree rand{1} --redo off --model GTR{0.35319/1.69071/1.46170/0.40445/3.67358/1.00000}+I{0.138}+G{1.052}+F{0.24599/0.24529/0.27050/0.23822}
+
+Analysis options:
+  run mode: ML tree search
+  start tree(s): random (1)
+  random seed: 1669814384
+  tip-inner: OFF
+  pattern compression: ON
+  per-rate scalers: OFF
+  site repeats: ON
+  fast spr radius: AUTO
+  spr subtree cutoff: 1.000000
+  branch lengths: proportional (ML estimate, algorithm: NR-FAST)
+  SIMD kernels: SSE3
+  parallelization: coarse-grained (auto), NONE/sequential
+
+WARNING: Running in REDO mode: existing checkpoints are ignored, and all result files will be overwritten!
+
+[00:00:00] Reading alignment from file: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/Elephantopus_3/masked_species_real_msa.phy
+[00:00:00] Loaded alignment with 7 taxa and 841 sites
+
+Alignment comprises 1 partitions and 150 patterns
+
+Partition 0: noname
+Model: GTR{0.35319/1.69071/1.4617/0.40445/3.67358/1}+FU{0.24599/0.24529/0.2705/0.23822}+IU{0.138}+G4m{1.052}
+Alignment sites / patterns: 841 / 150
+Gaps: 21.62 %
+Invariant sites: 71.34 %
+
+
+NOTE: Binary MSA file created: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/Elephantopus_3/masked_species_real_msa.phy.raxml.rba
+
+Parallelization scheme autoconfig: 1 worker(s) x 1 thread(s)
+
+Parallel reduction/worker buffer size: 1 KB  / 0 KB
+
+[00:00:00] Generating 1 random starting tree(s) with 7 taxa
+[00:00:00] Data distribution: max. partitions/sites/weight per thread: 1 / 150 / 2400
+[00:00:00] Data distribution: max. searches per worker: 1
+
+Starting ML tree search with 1 distinct starting trees
+
+[00:00:00 -2752.166235] Initial branch length optimization
+[00:00:00 -2440.990873] Model parameter optimization (eps = 10.000000)
+[00:00:00 -2440.812201] AUTODETECT spr round 1 (radius: 5)
+[00:00:00 -2436.392873] SPR radius for FAST iterations: 5 (autodetect)
+[00:00:00 -2436.392873] Model parameter optimization (eps = 3.000000)
+[00:00:00 -2436.392873] FAST spr round 1 (radius: 5)
+[00:00:00 -2435.502144] FAST spr round 2 (radius: 5)
+[00:00:00 -2430.029580] FAST spr round 3 (radius: 5)
+[00:00:00 -2430.029579] Model parameter optimization (eps = 1.000000)
+[00:00:00 -2430.029579] SLOW spr round 1 (radius: 5)
+[00:00:00 -2430.029579] Model parameter optimization (eps = 0.100000)
+
+[00:00:00] ML tree search #1, logLikelihood: -2430.029579
+
+
+Optimized model parameters:
+
+   Partition 0: noname
+   Rate heterogeneity: GAMMA (4 cats, mean),  alpha: 1.052000 (user),  weights&rates: (0.250000,0.147211) (0.250000,0.491842) (0.250000,1.008109) (0.250000,2.352838) 
+   P-inv (user): 0.138000
+   Base frequencies (user): 0.245990 0.245290 0.270500 0.238220 
+   Substitution rates (user): 0.353190 1.690710 1.461700 0.404450 3.673580 1.000000 
+
+
+Final LogLikelihood: -2430.029579
+
+AIC score: 4882.059157 / AICc score: 4882.377613 / BIC score: 4934.139665
+Free parameters (model + branch lengths): 11
+
+Best ML tree saved to: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/Elephantopus_3/masked_species_real_msa.phy.raxml.bestTree
+Optimized model saved to: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/Elephantopus_3/masked_species_real_msa.phy.raxml.bestModel
+
+Execution log saved to: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/Elephantopus_3/masked_species_real_msa.phy.raxml.log
+
+Analysis started: 30-Nov-2022 15:19:44 / finished: 30-Nov-2022 15:19:45
+
+Elapsed time: 0.316 seconds
+

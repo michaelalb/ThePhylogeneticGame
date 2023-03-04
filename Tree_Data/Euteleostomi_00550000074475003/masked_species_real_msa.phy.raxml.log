@@ -1,0 +1,95 @@
+
+RAxML-NG v. 1.1 released on 29.11.2021 by The Exelixis Lab.
+Developed by: Alexey M. Kozlov and Alexandros Stamatakis.
+Contributors: Diego Darriba, Tomas Flouri, Benoit Morel, Sarah Lutteropp, Ben Bettisworth.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+System: Intel(R) Xeon(R) CPU E5-2680 v3 @ 2.50GHz, 24 cores, 125 GB RAM
+
+RAxML-NG was called at 21-Dec-2022 19:39:28 as follows:
+
+raxml-ng --msa /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/Euteleostomi_00550000074475003/masked_species_real_msa.phy --threads 1 --opt-branches on --opt-model --nofiles --tree rand{1} --redo off --model GTR{2.22612/3.16992/1.27565/1.77126/4.06118/1.00000}+I{0.113}+G{2.245}+F{0.30211/0.20954/0.26314/0.22521}
+
+Analysis options:
+  run mode: ML tree search
+  start tree(s): random (1)
+  random seed: 1671644368
+  tip-inner: OFF
+  pattern compression: ON
+  per-rate scalers: OFF
+  site repeats: ON
+  fast spr radius: AUTO
+  spr subtree cutoff: 1.000000
+  branch lengths: proportional (ML estimate, algorithm: NR-FAST)
+  SIMD kernels: AVX2
+  parallelization: coarse-grained (auto), NONE/sequential
+
+WARNING: Running in REDO mode: existing checkpoints are ignored, and all result files will be overwritten!
+
+[00:00:00] Reading alignment from file: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/Euteleostomi_00550000074475003/masked_species_real_msa.phy
+[00:00:00] Loaded alignment with 15 taxa and 4932 sites
+
+Alignment comprises 1 partitions and 1743 patterns
+
+Partition 0: noname
+Model: GTR{2.22612/3.16992/1.27565/1.77126/4.06118/1}+FU{0.30211/0.20954/0.26314/0.22521}+IU{0.113}+G4m{2.245}
+Alignment sites / patterns: 4932 / 1743
+Gaps: 60.85 %
+Invariant sites: 66.00 %
+
+
+NOTE: Binary MSA file created: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/Euteleostomi_00550000074475003/masked_species_real_msa.phy.raxml.rba
+
+Parallelization scheme autoconfig: 1 worker(s) x 1 thread(s)
+
+Parallel reduction/worker buffer size: 1 KB  / 0 KB
+
+[00:00:00] Generating 1 random starting tree(s) with 15 taxa
+[00:00:00] Data distribution: max. partitions/sites/weight per thread: 1 / 1743 / 27888
+[00:00:00] Data distribution: max. searches per worker: 1
+
+Starting ML tree search with 1 distinct starting trees
+
+[00:00:00 -31299.719432] Initial branch length optimization
+[00:00:00 -29041.998949] Model parameter optimization (eps = 10.000000)
+[00:00:00 -29040.034043] AUTODETECT spr round 1 (radius: 5)
+[00:00:00 -26165.850032] AUTODETECT spr round 2 (radius: 10)
+[00:00:00 -26165.844565] SPR radius for FAST iterations: 5 (autodetect)
+[00:00:00 -26165.844565] Model parameter optimization (eps = 3.000000)
+[00:00:00 -26165.843542] FAST spr round 1 (radius: 5)
+[00:00:00 -26070.171294] FAST spr round 2 (radius: 5)
+[00:00:01 -26069.339583] FAST spr round 3 (radius: 5)
+[00:00:01 -26069.129469] FAST spr round 4 (radius: 5)
+[00:00:02 -26069.127974] Model parameter optimization (eps = 1.000000)
+[00:00:02 -26069.127948] SLOW spr round 1 (radius: 5)
+[00:00:03 -26069.127943] SLOW spr round 2 (radius: 10)
+[00:00:04 -26069.127943] SLOW spr round 3 (radius: 15)
+[00:00:04 -26069.127943] Model parameter optimization (eps = 0.100000)
+
+[00:00:04] ML tree search #1, logLikelihood: -26069.127943
+
+
+Optimized model parameters:
+
+   Partition 0: noname
+   Rate heterogeneity: GAMMA (4 cats, mean),  alpha: 2.245000 (user),  weights&rates: (0.250000,0.320866) (0.250000,0.678771) (0.250000,1.075065) (0.250000,1.925299) 
+   P-inv (user): 0.113000
+   Base frequencies (user): 0.302110 0.209540 0.263140 0.225210 
+   Substitution rates (user): 2.226120 3.169920 1.275650 1.771260 4.061180 1.000000 
+
+
+Final LogLikelihood: -26069.127943
+
+AIC score: 52192.255887 / AICc score: 52192.564206 / BIC score: 52367.850383
+Free parameters (model + branch lengths): 27
+
+Best ML tree saved to: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/Euteleostomi_00550000074475003/masked_species_real_msa.phy.raxml.bestTree
+Optimized model saved to: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/Euteleostomi_00550000074475003/masked_species_real_msa.phy.raxml.bestModel
+
+Execution log saved to: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/Euteleostomi_00550000074475003/masked_species_real_msa.phy.raxml.log
+
+Analysis started: 21-Dec-2022 19:39:28 / finished: 21-Dec-2022 19:39:32
+
+Elapsed time: 4.332 seconds
+

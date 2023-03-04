@@ -1,0 +1,91 @@
+
+RAxML-NG v. 1.1 released on 29.11.2021 by The Exelixis Lab.
+Developed by: Alexey M. Kozlov and Alexandros Stamatakis.
+Contributors: Diego Darriba, Tomas Flouri, Benoit Morel, Sarah Lutteropp, Ben Bettisworth.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+System: AMD Opteron(tm) Processor 6128, 16 cores, 117 GB RAM
+
+RAxML-NG was called at 30-Nov-2022 16:46:28 as follows:
+
+raxml-ng --msa /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/247/masked_species_real_msa.phy --threads 1 --opt-branches on --opt-model --nofiles --tree rand{1} --redo off --model GTR{1.77257/6.38285/3.03260/1.01821/7.33932/1.00000}+I{0.084}+G{0.419}+F{0.24654/0.20249/0.21553/0.33544}
+
+Analysis options:
+  run mode: ML tree search
+  start tree(s): random (1)
+  random seed: 1669819588
+  tip-inner: OFF
+  pattern compression: ON
+  per-rate scalers: OFF
+  site repeats: ON
+  fast spr radius: AUTO
+  spr subtree cutoff: 1.000000
+  branch lengths: proportional (ML estimate, algorithm: NR-FAST)
+  SIMD kernels: SSE3
+  parallelization: coarse-grained (auto), NONE/sequential
+
+WARNING: Running in REDO mode: existing checkpoints are ignored, and all result files will be overwritten!
+
+[00:00:00] Reading alignment from file: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/247/masked_species_real_msa.phy
+[00:00:00] Loaded alignment with 12 taxa and 759 sites
+
+Alignment comprises 1 partitions and 295 patterns
+
+Partition 0: noname
+Model: GTR{1.77257/6.38285/3.0326/1.01821/7.33932/1}+FU{0.24654/0.20249/0.21553/0.33544}+IU{0.084}+G4m{0.419}
+Alignment sites / patterns: 759 / 295
+Gaps: 17.59 %
+Invariant sites: 68.38 %
+
+
+NOTE: Binary MSA file created: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/247/masked_species_real_msa.phy.raxml.rba
+
+Parallelization scheme autoconfig: 1 worker(s) x 1 thread(s)
+
+Parallel reduction/worker buffer size: 1 KB  / 0 KB
+
+[00:00:00] Generating 1 random starting tree(s) with 12 taxa
+[00:00:00] Data distribution: max. partitions/sites/weight per thread: 1 / 295 / 4720
+[00:00:00] Data distribution: max. searches per worker: 1
+
+Starting ML tree search with 1 distinct starting trees
+
+[00:00:00 -3591.563214] Initial branch length optimization
+[00:00:00 -3187.404010] Model parameter optimization (eps = 10.000000)
+[00:00:00 -3186.121831] AUTODETECT spr round 1 (radius: 5)
+[00:00:00 -2904.170589] AUTODETECT spr round 2 (radius: 10)
+[00:00:00 -2904.169919] SPR radius for FAST iterations: 5 (autodetect)
+[00:00:00 -2904.169919] Model parameter optimization (eps = 3.000000)
+[00:00:00 -2904.169884] FAST spr round 1 (radius: 5)
+[00:00:00 -2904.169882] Model parameter optimization (eps = 1.000000)
+[00:00:00 -2904.169882] SLOW spr round 1 (radius: 5)
+[00:00:01 -2904.169882] SLOW spr round 2 (radius: 10)
+[00:00:01 -2904.169882] Model parameter optimization (eps = 0.100000)
+
+[00:00:01] ML tree search #1, logLikelihood: -2904.169882
+
+
+Optimized model parameters:
+
+   Partition 0: noname
+   Rate heterogeneity: GAMMA (4 cats, mean),  alpha: 0.419000 (user),  weights&rates: (0.250000,0.019548) (0.250000,0.195801) (0.250000,0.751048) (0.250000,3.033602) 
+   P-inv (user): 0.084000
+   Base frequencies (user): 0.246540 0.202490 0.215530 0.335440 
+   Substitution rates (user): 1.772570 6.382850 3.032600 1.018210 7.339320 1.000000 
+
+
+Final LogLikelihood: -2904.169882
+
+AIC score: 5850.339764 / AICc score: 5851.593495 / BIC score: 5947.611801
+Free parameters (model + branch lengths): 21
+
+Best ML tree saved to: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/247/masked_species_real_msa.phy.raxml.bestTree
+Optimized model saved to: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/247/masked_species_real_msa.phy.raxml.bestModel
+
+Execution log saved to: /groups/pupko/alburquerque/RL/Tree_Data/data/All_sized/247/masked_species_real_msa.phy.raxml.log
+
+Analysis started: 30-Nov-2022 16:46:28 / finished: 30-Nov-2022 16:46:29
+
+Elapsed time: 1.185 seconds
+

@@ -140,6 +140,8 @@ NEEDED_FILES_IN_A_FOLDER = [MSA_FILE_NAME, NJ_STARTING_TREE_FILE_NAME, SPLIT_HAS
                             PHYML_PARAM_FILE_NAME, RAXML_ML_TREE_FILE_NAME]
 RANDOM_STARTING_TREE_OPTIONS_FILE_NAME = Path('random_starting_trees_{}_trees_horizon_{}.txt')
 PATH_TO_TESTING_TREES_FILE = Path("Tree_data/sampled_datasets_All_sized_ds_Test_RL.csv")
+PATH_TO_TRAINING_TREES_FILE = Path("Tree_data/sampled_datasets_All_sized_ds_Train_RL.csv")
+
 RANDOM_STARTING_TREES_FILE_NAME = "{data_set}.raxml.startTree"
 
 ##########################

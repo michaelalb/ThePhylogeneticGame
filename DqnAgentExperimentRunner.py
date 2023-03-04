@@ -19,13 +19,6 @@ def run_dqn_agent_experiment(**kwargs):
     agent.test(result_dir=result_dir, final_test=True, episode=sc.EPISODES)
 
 
-def learn_from_experience(buffer_data_dir_lst, **kwargs):
-    agent, result_dir = set_up_dqn_agent(kwargs['cpus'], kwargs['experiment_unique_dir_name'], buffer_data_dir_lst)
-
-    agent.learn_from_experience(unique_dir_name_lst=buffer_data_dir_lst, epochs=sc.EPOCHS, result_dir=result_dir,
-                                processed_data_dir_name=kwargs['processed_data_dir_name'])
-
-
 def set_up_dqn_agent(cpus, experiment_unique_dir_name, buffer_data_dir_lst=None):
     # buffer_data_dir_lst - should only be set if this is a learn from experience scenario
     random.seed(sc.RANDOM_SEED)

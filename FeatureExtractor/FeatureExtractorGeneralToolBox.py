@@ -109,12 +109,11 @@ def split_lookup(splitsHash, anyNode, data_set_number):
     leaves_lst = [leaf.name for leaf in anyNode.get_leaves()]
     sp_set, IsEven, max_k = get_group_atts(sp_lst)
     if len(leaves_lst) == len(sp_set):  # namely if this is the NEW tree root
-        new_node = anyNode.children[0]  # todo: make sure again
+        new_node = anyNode.children[0]
         leaves_lst = [leaf.name for leaf in new_node.get_leaves()]
     leaves_str = get_min_group(splitsHash, leaves_lst, sp_set, IsEven, max_k)
     bstrap = splitsHash.get(leaves_str, 0)
 
-    # todo: this won't be needed if we decide to runover the previously created pkls (from now update_splitsHash saves these in the dict)
     if len(leaves_lst) == 1:
         bstrap = 100
 
@@ -233,7 +232,7 @@ def parse_raxmlNG_content(content):
             subs_freq = re.search(
                 "Substitution rates.*:\s+(\d+\.?\d*)\s+(\d+\.?\d*)\s+(\d+\.?\d*)\s+(\d+\.?\d*)\s+(\d+\.?\d*)\s+(\d+\.?\d*)",
                 content)
-            for i, nuc_pair in enumerate(["AC", "AG", "AT", "CG", "CT", "GT"]):  # todo: make sure order
+            for i, nuc_pair in enumerate(["AC", "AG", "AT", "CG", "CT", "GT"]):
                 res_dict["sub" + nuc_pair] = subs_freq.group(i + 1).strip()
 
             # Elapsed time of raxml-ng optimization
@@ -264,7 +263,6 @@ def calc_likelihood(tree, msa_file, rates, pinv, alpha, freq):
     :param use_files: should generate optimized tree file
     :return: float. the score is the minus log-likelihood value of the tree
     """
-    # todo: move this out of try except format - find out how to check for this rare alpha val
     alpha = alpha if float(alpha) > 0.02 else 0.02
     model_line_params = 'GTR{rates}+I{pinv}+G{alpha}+F{freq}'.format(rates="{{{0}}}".format("/".join(rates)),
                                                                      pinv="{{{0}}}".format(pinv),

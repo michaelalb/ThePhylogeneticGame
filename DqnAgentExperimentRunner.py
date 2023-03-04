@@ -17,7 +17,6 @@ def run_dqn_agent_experiment(**kwargs):
     agent.env.helper.plot_rl_scores(result_dir, all_episode_rewards, all_episode_q, loss)
 
     agent.test(result_dir=result_dir, final_test=True, episode=sc.EPISODES)
-    change_permissions(paths_to_permit=[result_dir, sc.CODE_PATH])
 
 
 def learn_from_experience(buffer_data_dir_lst, **kwargs):
@@ -25,8 +24,6 @@ def learn_from_experience(buffer_data_dir_lst, **kwargs):
 
     agent.learn_from_experience(unique_dir_name_lst=buffer_data_dir_lst, epochs=sc.EPOCHS, result_dir=result_dir,
                                 processed_data_dir_name=kwargs['processed_data_dir_name'])
-
-    change_permissions(paths_to_permit=[result_dir, sc.CODE_PATH])
 
 
 def set_up_dqn_agent(cpus, experiment_unique_dir_name, buffer_data_dir_lst=None):
@@ -49,29 +46,6 @@ def set_up_dqn_agent(cpus, experiment_unique_dir_name, buffer_data_dir_lst=None)
     agent.env.helper.map_unique_name_to_params_log(experiment_unique_dir_name=experiment_unique_dir_name,
                                                    train_datasets=train_datasets, buffer_data_dir_lst=buffer_data_dir_lst)
     return agent, result_dir
-
-
-def change_permissions(paths_to_permit=(sc.EXPERIMENTS_RESDIR, sc.SUMMARY_FILES_DIR, sc.CODE_PATH, sc.TRAINING_DATA_DIR)):
-    for path in paths_to_permit:
-        change_path_permissions(path)
-
-
-def change_path_permissions(path):
-    try:
-        os.chmod(path, 0o777)
-    except Exception as e:
-        pass
-    for root, dirs, files in os.walk(path):
-        for cur_dir in dirs:
-            try:
-                os.chmod(os.path.join(root, cur_dir), 0o777)
-            except Exception as e:
-                pass
-        for file in files:
-            try:
-                os.chmod(os.path.join(root, file), 0o777)
-            except Exception as e:
-                pass
 
 
 def choose_rl_datasets(number_of_species, how_many_ds_train):

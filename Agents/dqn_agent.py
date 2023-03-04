@@ -526,7 +526,6 @@ class DqnAgent:
         self.persistent_testing_results['episodes'].append(episode)
 
         # record results that need saving across episodes
-        # TODO: taking the max() on the diff is wrong, should take diff of the maxes(raxml and ours)
         self.persistent_testing_results['train_diff_means_norm'].append(
             np.mean(raw_results_train_set_df.groupby('data_set_number')['ll_diff'].mean()))
         self.persistent_testing_results['train_diff_bests_norm'].append(

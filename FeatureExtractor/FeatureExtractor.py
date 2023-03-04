@@ -109,7 +109,6 @@ class FeatureExtractorClass:
         :return: a single lined dataframe with all the starting tree, spr move an feature data.
         feature names can be found in the ToolBox class.
         """
-        # todo: change everywhere - b_subtree:c1_subtree, c_subtree:c2_subtree - so it will correctly match the referenced png
         resulting_tree, prune_subtree, remaining_tree, b_subtree, c_subtree = SPR.generate_neighbour(base_tree=current_tree_obj, possible_move=move)
         prune_edge, rgft_edge = move
 
@@ -161,7 +160,6 @@ class FeatureExtractorClass:
         be normalized so because this process happens here, we pass the previous ll
         :return: ll
         """
-        # todo: later on make the whole ll parameters thing more efficient
         self.FTB = FeatureToolBox.FeatureExtractorFeatureToolBoxClass(current_tree=current_tree_obj, prune_tree=None,
                                                                       remaining_tree=None, b_subtree=None,
                                                                       c_subtree=None, data_set_number=data_set_number,

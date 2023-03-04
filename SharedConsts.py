@@ -3,19 +3,16 @@ this file is meant for constants shared across all modules
 note: only one place for the data, gitcode, results, and any input/output (Michael's homedir/RL).
 the temp PyCharm synced code could be in all our users for debugging
 """
-import json
-import os
-import platform
+from NJ_STATIC_DATA import NJ_TBL_FOR_DATASET_DICT
 from pathlib import Path
 
-import Agents.Qnetwork.ExploreScheduler as ExploreScheduler
+import Qnetwork.ExploreScheduler as ExploreScheduler
 import torch
 
 ##########################
 #EXPERIMENT CONFIGURATION#
 ##########################
 
-RUNNING_ON_CS = False # todo: remove
 ###################################
 # constants that define the model #
 ###################################
@@ -87,27 +84,16 @@ UPDATE_TARGET_NET = 100000
 ##########################
 ####### MAIN PATHS #######
 ##########################
-DATA_SUFFIX = 'All_sized'  # could be 'All_sized' | 'Size_20' | 'Validation_Set'
-if platform.system() == 'Linux':
-    DIRPATH = Path('/home/mansour/ozgranit/RL/') if qp.RUNNING_ON_CS else Path('/groups/pupko/alburquerque/RL/')
-    PATH_TO_RAW_TREE_DATA = DIRPATH / 'Tree_Data/data' / DATA_SUFFIX
-else:
-    if os.path.exists(r"C:\Users\ItayM3\Dropbox"):  # Dana - in lab
-        DIRPATH = Path(r"C:\Users\ItayM3\Dropbox\\")
-        PATH_TO_RAW_TREE_DATA = DIRPATH / 'PhyRL_proj\data\\'
-    else:
-        DIRPATH = 'DIRPATH was not found'
-        PATH_TO_RAW_TREE_DATA = 'DATAPATH was not found'
-TRAINING_DATA_DIR = DIRPATH / 'Training_data'
+DIRPATH = Path('./')
+PATH_TO_RAW_TREE_DATA = DIRPATH / 'Tree_Data/'
 EXPERIMENTS_RESDIR = DIRPATH / 'experiments_results'
-CODE_PATH = DIRPATH / 'code'
-SUMMARY_FILES_DIR = DIRPATH / 'summary_files'
 RESULTS_FOLDER_NAME = 'results_and_graphs'
 # better to divide to classes (e.g., AGENT (containing QNET and LL_ESTIMATOR) | FEATURE_EXTRACTOR | DATA | GENERAL) ?
 
 ##########################
 ### FEATURE EXTRACTOR ####
 ##########################
+NJ_TBL_FOR_DATASET_DICT = NJ_TBL_FOR_DATASET_DICT
 # note: for naming clarifications, refer to In_Progress_Code/FeatureExtractor/Visual_intuition_for_trees.png
 TARGET_LABEL_COLUMN = 'd_ll'  # edited from "d_ll_merged" that was there for historical reasons only
 CURRENT_TREE_NEWICK_COLUMN_NAME = 'current_tree_newick'
@@ -132,16 +118,11 @@ FEATURE_LIST = ['total_branch_length_nj_tree',
 IN_FEATURES = len(FEATURE_LIST)
 DATA_TYPES = {name: str if name in METADATA_LIST else float for name in
               FEATURE_LIST + LABEL_LIST + METADATA_LIST}
-# todo: replace this with const dict
-with open(DIRPATH / 'Tree_Data/data/tbl_dict_with_noad.txt') as json_file:
-    NJ_TBL_FOR_DATASET_DICT = json.load(json_file)
 
 ##########################
 ######### DATA ###########
 ##########################
 RAXML_NG_SCRIPT = "raxml-ng"  # after you install raxml-ng on your machine
-PATH_TO_DF_DATA = DIRPATH / 'Data/RawData'
-PATH_TO_RAW_TREE_DATA = PATH_TO_RAW_TREE_DATA  # defined according to the the platform used
 PATH_TO_SUDO_STARTING_TREE = Path('SudoStartingTree.phy')
 PATH_TO_SUDO_STARTING_ACTION = Path('SudoStartingTreeMove.json')
 # file names that need to be in each data folder:
@@ -158,18 +139,7 @@ TEMP_TREE_FOR_RAXML_SEARCH_FILE_NAME = Path("Temp_start_tree_file_for_raxml_sear
 NEEDED_FILES_IN_A_FOLDER = [MSA_FILE_NAME, NJ_STARTING_TREE_FILE_NAME, SPLIT_HASH_NJ, SPLIT_HASH_UPGMA,
                             PHYML_PARAM_FILE_NAME, RAXML_ML_TREE_FILE_NAME]
 RANDOM_STARTING_TREE_OPTIONS_FILE_NAME = Path('random_starting_trees_{}_trees_horizon_{}.txt')
-
-# todo: copy data striucture
-if RUNNING_ON_CS:
-    PATH_TO_TESTING_TREES_FILE = Path(
-        "/home/mansour/ozgranit/RL/Tree_Data/data/sampled_datasets_All_sized_ds_Test_RL.csv")
-    PATH_TO_TRAINING_TREES_FILE = Path(
-        "/home/mansour/ozgranit/RL/Tree_Data/data/sampled_datasets_All_sized_ds_Train_RL.csv")
-else:
-    PATH_TO_TESTING_TREES_FILE = Path(
-        "/groups/pupko/alburquerque/RL/Tree_Data/data/sampled_datasets_All_sized_ds_Test_RL.csv")  # todo: revert _Mansour
-    PATH_TO_TRAINING_TREES_FILE = Path(
-        "/groups/pupko/alburquerque/RL/Tree_Data/data/sampled_datasets_All_sized_ds_Train_RL.csv")  # todo: revert _Mansour
+PATH_TO_TESTING_TREES_FILE = Path("Tree_data/sampled_datasets_All_sized_ds_Test_RL.csv")
 RANDOM_STARTING_TREES_FILE_NAME = "{data_set}.raxml.startTree"
 
 ##########################

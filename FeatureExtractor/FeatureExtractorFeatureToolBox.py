@@ -202,7 +202,6 @@ class FeatureExtractorFeatureToolBoxClass:
                                        bstrap_algo='upgma', branch_name=branch_name)
 
     def features_bootstrap(self, which_tree, bstrap_algo, branch_name):
-        # todo: there is a bug still - upgma of current tree is sometimes 2 !?? for a certain node
         """
         bootstrap feature assignes a bootstrap value to a given edge in the tree.
         in order to have these values we create a hashing dictionary of all optional splits in species group.
@@ -229,7 +228,6 @@ class FeatureExtractorFeatureToolBoxClass:
             self.tree_helper_params['shared']['SplitsHash'][bstrap_algo] = splitsHash
         else:
             splitsHash = self.tree_helper_params['shared']['SplitsHash'][bstrap_algo]
-        #todo: this is due to the naming crisis. once resolved - remove.
         try:
             bstrap_val = FGT.split_lookup(splitsHash=splitsHash, anyNode=(tree&branch_name), data_set_number=self.data_set_number)
         except:
@@ -248,8 +246,6 @@ class FeatureExtractorFeatureToolBoxClass:
         freq, rates, pinv, alpha = FGT.get_likelihood_params(stat_path)
         return FGT.calc_likelihood(self.trees[kwargs['which_tree']].write(format=1, format_root_node=True), msa_file_path, rates, pinv, alpha, freq)
 
-    # todo: implement like a normal person if this works
-
     def features_bl_dana(self, **kwargs):
         if self.tree_helper_params[kwargs['which_tree']]['BL_Dana'] is None:
             bl_dana = self.calc_bl_dana(self.trees[kwargs['which_tree']])
@@ -263,7 +259,6 @@ class FeatureExtractorFeatureToolBoxClass:
         if not branches:
             return 0,0,0,0,0
         entropy = self.compute_entropy_dana(branches)
-        # returning max here although already computed separately in our orig set of features. # todo: remove the max(branches) from the original implementation of get_branch_lengths or rename this function
         return max(branches), min(branches), np.mean(branches), np.std(branches), entropy
 
     def get_branch_lengths_dana(self, tree):

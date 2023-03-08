@@ -1,6 +1,6 @@
 import pathlib
 
-from Agents.Qnetwork.Qnet_parameters import SPR_RADIUS
+from SharedConsts import SPR_RADIUS
 from ete3 import *
 
 

@@ -36,8 +36,6 @@ def set_up_dqn_agent(cpus, experiment_unique_dir_name, buffer_data_dir_lst=None)
                          use_random_starts=sc.USE_RANDOM_STARTING_TREES, results_dir=result_dir, is_train=False)
 
     agent = DqnAgent(env=env, test_env=test_env, experiment_unique_dir_name=experiment_unique_dir_name)
-    agent.env.helper.map_unique_name_to_params_log(experiment_unique_dir_name=experiment_unique_dir_name,
-                                                   train_datasets=train_datasets, buffer_data_dir_lst=buffer_data_dir_lst)
     return agent, result_dir
 
 

@@ -130,33 +130,6 @@ class PhyloGameUtils:
             plt.savefig(result_dir / 'Epsilons.png')
             plt.clf()
 
-    @staticmethod
-    def map_unique_name_to_params_log(experiment_unique_dir_name, train_datasets, buffer_data_dir_lst=None):
-        """
-        saves a csv file, updated with the new rl experiment name, that is mapped to all its hyper parameters.
-        If the cols list has been changes since the last update,
-        it adds the relevant additional columns and/or Nans in the irrelevant cols
-        :param experiment_unique_dir_name:
-        :param train_datasets:
-        :return:
-        """
-        current_logger_filepath = SC.RL_EXPERIMENTS_LOGGER_PATH
-        logger_cols_dict = SC.RL_EXPERIMENTS_LOGGER_COLS_DICT
-        logger_cols_dict['unique_dir_name'] = experiment_unique_dir_name
-
-        logger_df_to_add = pd.DataFrame([list(logger_cols_dict.values())], columns=list(logger_cols_dict.keys()))
-        logger_df_to_add['data_sets'] = str(train_datasets)
-        if buffer_data_dir_lst:
-            logger_df_to_add['buffer_data_dir_lst'] = str(buffer_data_dir_lst)
-        if not current_logger_filepath.is_file():
-            logger_df_to_add.to_csv(current_logger_filepath, mode='a', index=False)
-        else:
-            logger_df_current = pd.read_csv(current_logger_filepath)
-            if list(logger_df_current) == list(logger_cols_dict.keys()):
-                logger_df_to_add.to_csv(current_logger_filepath, mode='a', index=False, header=False)
-            else:
-                logger_df_current.append(logger_df_to_add, sort=False).to_csv(current_logger_filepath, index=False)
-
     def get_random_tree(self, data_set):
         """
         this is an auxiliary function to create a totally random starting tree with no brach length optimization

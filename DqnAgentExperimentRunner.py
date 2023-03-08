@@ -28,7 +28,8 @@ def set_up_dqn_agent(cpus, experiment_unique_dir_name, buffer_data_dir_lst=None)
     if not os.path.exists(result_dir):
         os.mkdir(result_dir)
     train_datasets, test_datasets = choose_rl_datasets(sc.NUMBER_OF_SPECIES, sc.HOW_MANY_DATASETS_TRAIN)
-
+    print(f'train datasets: {train_datasets}')
+    print(f'test datasets: {test_datasets}')
     # train_datasets = switch_train_sets(buffer_data_dir_lst, train_datasets)
     env = PhyloGame(datasets=train_datasets, number_of_cpus_to_use=number_of_cpus,
                     use_random_starts=sc.USE_RANDOM_STARTING_TREES, results_dir=result_dir, is_train=True)

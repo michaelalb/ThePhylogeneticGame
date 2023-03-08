@@ -227,7 +227,7 @@ class PhyloGameUtils:
         :return:
         """
         # one for each episode, 10 for every test, and for the last test + something to offset randomness
-        how_many_trees_to_generate = (SC.EPISODES + (SC.EPISODES // SC.TEST_EVERY) * 10 + 10 + 10 * SC.HOW_MANY_DATASETS_TRAIN) // SC.HOW_MANY_DATASETS_TRAIN
+        how_many_trees_to_generate = 1000
         folder_suffix_str = 'random_starting_trees' if is_random else 'parsimony_starting_trees'
         raxml_command = 'rand' if is_random else 'parsimony'
         path_to_starting_trees = os.path.join(str(self.results_dir), folder_suffix_str)

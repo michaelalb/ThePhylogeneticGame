@@ -43,7 +43,7 @@ num_of_sp = 7
 # should run BL optimization between each step
 SHOULD_OPTIMIZE_BRANCH_LENGTHS = False
 NUMBER_OF_SPECIES = [num_of_sp]  # only one num for now
-HOW_MANY_DATASETS_TRAIN = 11 if FIXED_TRAIN_DATASETS is None else len(FIXED_TRAIN_DATASETS)
+HOW_MANY_DATASETS_TRAIN = 1 if FIXED_TRAIN_DATASETS is None else len(FIXED_TRAIN_DATASETS)
 USE_RANDOM_STARTING_TREES = True
 TEST_EVERY = 500  # how many leaning episodes between tests
 SAVE_WEIGHTS_EVERY = 250  # how many episodes between Qnet and replay buffer snapshots

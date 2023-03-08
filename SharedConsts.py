@@ -14,7 +14,7 @@ import torch
 ##########################
 
 ###################################
-# constants that define the model #
+# constants that define the Qnet #
 ###################################
 HIDDEN_SIZES = [4096] + [4096] + [2048] + [128] + [32]
 
@@ -23,6 +23,7 @@ HIDDEN_SIZES = [4096] + [4096] + [2048] + [128] + [32]
 ###################
 BATCH_SIZE = 128
 LEARNING_RATE = 1e-5
+# used to limit an agents action space.
 SPR_RADIUS = None     # if not None, should be > 1
 
 
@@ -34,27 +35,31 @@ SPR_RADIUS = None     # if not None, should be > 1
 DTYPE = torch.float
 LOSS_FUNC = torch.nn.MSELoss()
 LOSS_FUNC_NAME = "MSE-Loss"
-FIXED_TRAIN_DATASETS = ['balibase_RV12_BB12017']
-FIXED_TEST_DATASETS = ['balibase_RV12_BB12017']
+# if empty datasets will be randomly selected out of train and test pool
+FIXED_TRAIN_DATASETS = []
+FIXED_TEST_DATASETS = []
+# how many species
 num_of_sp = 7
+# should run BL optimization between each step
 SHOULD_OPTIMIZE_BRANCH_LENGTHS = False
 NUMBER_OF_SPECIES = [num_of_sp]  # only one num for now
 HOW_MANY_DATASETS_TRAIN = 11 if FIXED_TRAIN_DATASETS is None else len(FIXED_TRAIN_DATASETS)
 USE_RANDOM_STARTING_TREES = True
-TEST_EVERY = 500
-SAVE_WEIGHTS_EVERY = 250
+TEST_EVERY = 500  # how many leaning episodes between tests
+SAVE_WEIGHTS_EVERY = 250  # how many episodes between Qnet and replay buffer snapshots
 #################
 # RL parameters #
 #################
-TIMES_TO_LEARN = 50  # how often to update the network
+TIMES_TO_LEARN = 50  # how many time to run GTD between episodes
 BUFFER_SIZE = int(1e4)  # replay buffer size
-EPISODES = 5000
+EPISODES = 5000  # how many episodes to run the experiment for
 RANDOM_SEED = 'xx'
+# controls random starting tree queue mechanism - created for I\O created for efficacy
 RANDOM_STARTING_TREES_MEMORY_BATCH_FOR_DS = 100
 # ###### these are the correct strings to use.
 # ALSO NO TRANSFORM MEANS JUST DIVIDING BY (-CURRENT LL)
 
-# horizon params
+# Determines for every data set size (number of species) which horizon to use
 horizon_dict = {    # if not in dict - error
     7: 20,
     12: 20,
@@ -62,8 +67,10 @@ horizon_dict = {    # if not in dict - error
     20: 30,
     70: 50
 }
-HORIZON = horizon_dict[num_of_sp]  # this is a constant horizon, if set to 'do not use', we'll use the HORIZON_MULTIPLIER
-GAMMA = 0.9  # discount factor
+HORIZON = horizon_dict[num_of_sp]
+
+# discount factor
+GAMMA = 0.9
 assert GAMMA < 1, 'Gamma must be < 1 for non-finite horizon'
 
 # exploration policy params
@@ -74,11 +81,11 @@ EXPLORATION_POLICY = ExploreScheduler.SoftMaxSchedule(
     final_t=FINAL_T_SOFTMAX,
     initial_t=INIT_T_SOFTMAX)
 
-# target net params
+# DQN target net params
 USE_TARGET = False
 TARGET_NET_UPDATE_POLICY = 'hard'
 SOFT_UPDATE_RATE = 1e-3  # for soft update of target parameters
-UPDATE_TARGET_NET = 100000
+UPDATE_TARGET_NET = 100000  # after how many iterations of GTD to update the target net
 
 
 ##########################

@@ -15,3 +15,5 @@ To run an experiment run the ProjectMain.py file. <br />
 There are the relevant parameters: <br />
 -- experiment_unique_dir_name - which will create a unique directory for you experiment results.<br/>
 -- cpus - which allows you to run the training process on multiple cpus for increased runtime.
+
+All parameters for experiment configuration are in SharedConsts.py with appropriate documentation.
